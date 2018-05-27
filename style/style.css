@@ -32,7 +32,7 @@ body{
     left: 60%;
     top: 50px;
     width: 30%;
-    height: 400px;
+    height: 450px;
 }
 
 #login_title{
@@ -49,6 +49,7 @@ body{
 #error_notif{
     display: none;
     margin: 20px;
+    margin: 0;
 }
 
 .index_img{
@@ -58,6 +59,17 @@ body{
     height: calc(100% - 80px);
     width: 100%;
     position: absolute;
+}
+
+.ps_link{
+    font-size: 13px;
+    color: #007bff;
+}
+
+.ps_link:hover{
+    color: #0056b3;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* menu.php */

@@ -74,9 +74,9 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `category` varchar(30) NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `category` varchar(16) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -87,7 +87,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin','premium'),(2,'regular','regular','regular'),(3,'free','free','free');
+INSERT INTO `users` VALUES (1,'admin','21232f297a57a5a743894a0e4a801fc3','Premium'),(2,'regular','af37d08ae228a87dc6b265fd1019c97d','Regular'),(3,'free','aa2d6e4f578eb0cfaba23beef76c2194','Free');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -100,4 +100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-26 22:30:51
+-- Dump completed on 2018-05-27  0:28:44

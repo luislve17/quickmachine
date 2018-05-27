@@ -1,7 +1,7 @@
 <?php
     session_start();
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     $mysqli = mysqli_connect('localhost', 'root', 'mysql', 'quickmachine');
     $query = "select * from users where username='$username' and password='$password'";
