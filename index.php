@@ -24,6 +24,11 @@
             <img id="title_icon" src="assets/icon_title.png" alt="icon_img">
         </div>
 
+        <div>
+            <div class="trans_rect"></div>
+            <img class="index_img" src="assets/machine-learning.jpg" alt="">
+        </div>
+
         <div class='card' id='login_card'>
             <div class="card-header">
                 <h3 id='login_title'>INICIAR SESIÓN</h3>

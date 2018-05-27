@@ -29,9 +29,9 @@ body{
 }
 
 #login_card{
-    left: 30%;
-    top: 30px;
-    width: 40%;
+    left: 60%;
+    top: 50px;
+    width: 30%;
     height: 400px;
 }
 
@@ -49,6 +49,15 @@ body{
 #error_notif{
     display: none;
     margin: 20px;
+}
+
+.index_img{
+    -webkit-filter: grayscale(100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-size: 100% 100%;
+    height: calc(100% - 80px);
+    width: 100%;
+    position: absolute;
 }
 
 /* menu.php */
@@ -143,4 +152,18 @@ hr{
     position: absolute;
     bottom: 10px;
     left: 5%;
+}
+
+#title{
+    cursor: pointer;
+}
+
+/* nuevo.php */
+.data_input{
+    max-height: 100%;
+}
+
+.sep_option{
+    padding-right: 30px;
+    text-align: left;
 }

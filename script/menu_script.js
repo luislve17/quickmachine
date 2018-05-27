@@ -2,6 +2,10 @@ $('document').ready(function(){
     $("#menu_title").text("Bienvenido(a) @" + current_username);
     $("#menu_title").fadeIn(1000);
 
+    $("#title").click(function(){
+        window.location.href = "menu.php";
+    });
+
     $.ajax({
         type: "POST",
         url: "get_menus.php",
@@ -23,7 +27,7 @@ $('document').ready(function(){
                 $('#menu_container_'+i).append(sub_menu_div);
                 for(var j = 0; j < menu_array.length; j++){
                     if(menu_array[j][2] == menu_array[i][0]){
-                        var new_submenu = "<button type='button' class='list-group-item d-flex justify-content-between align-items-center sub_menu btn' id='submenu_"+j+"'> ⇢ " + menu_array[j][1] + "</button>";
+                        var new_submenu = "<button type='button' class='list-group-item d-flex justify-content-between align-items-center sub_menu btn' id='submenu_"+menu_array[j][0]+"'> ⇢ " + menu_array[j][1] + "</button>";
                         $('#sub_mainmenu_'+i).append(new_submenu);
                     }
                 }
@@ -58,21 +62,21 @@ $('document').ready(function(){
         var submenu_list = $(this).next();
 
         if(!click_flags[menu_index]){
-            submenu_list.fadeIn("slow", function(){
+            submenu_list.toggle(300, function(){
                 click_flags[menu_index] = true;
             });
             submenu_list.css('display', 'grid');
 
 
         } else {
-            submenu_list.fadeOut(300, function(){
+            submenu_list.toggle(300, function(){
                 click_flags[menu_index] = false;
             });
         }
     })
 
     $("#main_menu").on('click', '.sub_menu', function(){
-        if($(this).attr('id') == "submenu_3"){
+        if($(this).attr('id') == "submenu_4"){
             window.location.href = "nuevo.php";
         }
     })

@@ -17,6 +17,7 @@
             var current_category = "<?php echo $_SESSION["logged_cat"]; ?>";
         </script>
         <script src="script/menu_script.js"></script>
+        <script src="script/nuevo_script.js"></script>
         <script src="script/bootstrap.min.js"></script>
         <link rel="stylesheet" type"text/css" href="style/bootstrap.min.css"/>
         <link rel="stylesheet" type"text/css" href="style/style.css"/>
@@ -43,18 +44,37 @@
             <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Archivo &gt; <a href="#">Nuevo</a><hr /></div>
 
             <center>
-                <div class="card" style="width: 90%">
-                    <div class="card-header" style="background-color:#303030">
-                        <h3 class="card-title" style="color: white">Módulo: Nuevo dataset</h3>
+                <div class="card data_input" style="width: 90%">
+                    <div align="left">
+                        <div class="card-header" style="background-color:#303030">
+                            <h3 class="card-title" style="color: white">sin titulo*</h3>
+                        </div>
+                        <div class="card-text" style="margin: 20px; text-align:left">
+                            <textarea class="form-control" rows="10" style="resize:none" id="data_input"></textarea>
+                        </div>
+                        <div class="btn_module" style="padding:20px; text-align:right">
+                            <div style="float:left">
+                                <label style="padding-right:35px">Separación:</label>
+                                <input type="checkbox" class="form-check-input sep_check" id="space">
+                                <label class="form-check-label sep_option" for="space">Espacio</label>
+
+                                <input type="checkbox" class="form-check-input" id="tab">
+                                <label class="form-check-label sep_option" for="tab">Tab</label>
+
+                                <input type="checkbox" class="form-check-input" id="comma">
+                                <label class="form-check-label sep_option" for="comma">Coma</label>
+                            </div>
+
+                            <button type="button" class="btn btn-secondary" id="cancelar">X</button>
+                            <button type="button" class="btn btn-danger" id="deshechar"><i class="far fa-trash-alt"></i> Deshechar</button>
+                            <button type="button" class="btn btn-success"><i class="far fa-save"></i> Guardar</button>
+                        </div>
                     </div>
-                    <p class="card-text" style="margin: 20px; text-align:left">
-                        Futura hoja de cálculo para crear datos tabulados
-                    </p>
                 </div>
 
                 <div id="social">
                     <i class="fab fa-facebook-square"></i> Síguenos
-                    <i class="fab fa-github"></i> <a href="#">Source</a>
+                    <i class="fab fa-github"></i> <a target="_blank" href="https://github.com/luislve17/quickmachine">Source</a>
                 </div>
             </center>
         </div>

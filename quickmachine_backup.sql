@@ -61,7 +61,7 @@ CREATE TABLE `menus` (
 
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-INSERT INTO `menus` VALUES (1,'Archivo',0,1),(2,'Data',0,1),(3,'Modulos',0,2),(4,'Nuevo',1,1),(5,'Cargar',1,2),(6,'Exportar',1,3),(7,'Ajustar',3,2),(8,'Clasificar',3,2);
+INSERT INTO `menus` VALUES (1,'Archivo',0,1),(2,'Data',0,1),(3,'Modulos',0,2),(4,'Nuevo',1,1),(5,'Importar',1,2),(6,'Exportar',1,3),(7,'Ajustar',3,2),(8,'Clasificar',3,2),(9,'Mostrar',2,1);
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,4 +100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-21 19:06:08
+-- Dump completed on 2018-05-26 22:30:51

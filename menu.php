@@ -58,7 +58,7 @@
 
                 <div id="social">
                     <i class="fab fa-facebook-square"></i> Síguenos
-                    <i class="fab fa-github"></i> <a href="#">Source</a>
+                    <i class="fab fa-github"></i> <a target="_blank" href="https://github.com/luislve17/quickmachine">Source</a>
                 </div>
             </center>
         </div>

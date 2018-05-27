@@ -5,6 +5,10 @@ $(document).ready(function(){
         }
     });
 
+    $("#title").click(function(){
+        window.location.href = "index.php";
+    });
+
     $("#enter_button").click(function(){try_login();});
 
     function try_login(){
