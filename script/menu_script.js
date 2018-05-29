@@ -76,8 +76,15 @@ $('document').ready(function(){
     })
 
     $("#main_menu").on('click', '.sub_menu', function(){
-        if($(this).attr('id') == "submenu_4"){
+        if($(this).attr('id') == "submenu_4"){ // Archivo > Nuevo
             window.location.href = "nuevo.php";
+        } else if ($(this).attr('id') == "submenu_9"){ // Data > Mostrar
+            console.log("?");
+            window.location.href = "mostrar.php";
         }
+    })
+
+    $(".logout_link").click(function(){
+        localStorage.clear();
     })
 });

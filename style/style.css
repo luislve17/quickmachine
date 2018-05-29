@@ -171,6 +171,14 @@ hr{
 }
 
 /* nuevo.php */
+#data_name{
+    margin: 0;
+}
+
+#data_name>*{
+    display: inline;
+}
+
 .data_input{
     max-height: 100%;
 }
@@ -178,4 +186,13 @@ hr{
 .sep_option{
     padding-right: 30px;
     text-align: left;
+}
+
+#deshechar,#guardar,#edit_name{
+    border-radius: 2px;
+}
+
+#edit_name{
+    padding: 4px;
+    margin-left: 10px;
 }

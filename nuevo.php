@@ -47,7 +47,11 @@
                 <div class="card data_input" style="width: 90%">
                     <div align="left">
                         <div class="card-header" style="background-color:#303030">
-                            <h3 class="card-title" style="color: white">sin titulo*</h3>
+                            <div class="card-title" style="color: white" id="data_name">
+                                <h3 id="current_name">sin titulo*</h3>
+                                <input type="text" id="input_name" style="display:none;font-size:22px;border-radius:4px"/>
+                                <button type="button" class="btn btn-secondary" id="edit_name"><i class="far fa-edit"></i></button>
+                            </div>
                         </div>
                         <div class="card-text" style="margin: 20px; text-align:left">
                             <textarea class="form-control" rows="10" style="resize:none" id="data_input"></textarea>
@@ -56,10 +60,7 @@
                             <div style="float:left">
                                 <label style="padding-right:35px">Separación:</label>
                                 <input type="checkbox" class="form-check-input sep_check" id="space">
-                                <label class="form-check-label sep_option" for="space">Espacio</label>
-
-                                <input type="checkbox" class="form-check-input" id="tab">
-                                <label class="form-check-label sep_option" for="tab">Tab</label>
+                                <label class="form-check-label sep_option" for="space">Espacio/Tab</label>
 
                                 <input type="checkbox" class="form-check-input" id="comma">
                                 <label class="form-check-label sep_option" for="comma">Coma</label>
@@ -67,7 +68,7 @@
 
                             <button type="button" class="btn btn-secondary" id="cancelar">X</button>
                             <button type="button" class="btn btn-danger" id="deshechar"><i class="far fa-trash-alt"></i> Deshechar</button>
-                            <button type="button" class="btn btn-success"><i class="far fa-save"></i> Guardar</button>
+                            <button type="button" class="btn btn-success" id="guardar"><i class="far fa-save"></i> Guardar</button>
                         </div>
                     </div>
                 </div>
