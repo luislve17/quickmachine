@@ -15,7 +15,7 @@ $(document).ready(function(){
                 $(this).html("REGISTRARSE").fadeIn();
             });
 
-            $('#cat_btn').toggle(300);
+            $('#cat').toggle(300);
 
             inic_reg_flag = true;
         } else {
@@ -28,7 +28,7 @@ $(document).ready(function(){
                 $(this).html("ENTRAR").fadeIn();
             });
 
-            $('#cat_btn').toggle(300);
+            $('#cat').toggle(300);
 
             inic_reg_flag = false;
         }
@@ -36,7 +36,12 @@ $(document).ready(function(){
 
     var cat_showing = "Categoría"
     var id = -1;
-    $("#cat_btn").click(function(){
+
+
+
+
+    /*
+    $("#cat_label").click(function(){
         if((id == 2)||(id == -1)){
             $(this).text("Free");
         } else if(id == 0) {
@@ -46,7 +51,8 @@ $(document).ready(function(){
         }
         id = (id + 1)%3;
         console.log(id);
-    })
+    });
+    */
 
     $("#enter_button").click(function(){
         if(!inic_reg_flag){
@@ -73,10 +79,10 @@ $(document).ready(function(){
 
         if(usr == ""){
             log_error.html('<strong>Error: </strong>Ingrese nombre de usuario');
-            log_error.fadeIn(300).delay(600).fadeOut(300);
+            log_error.fadeIn(300).delay(850).fadeOut(300);
         } else if(pass == "") {
             log_error.html('<strong>Error: </strong>Ingrese contraseña');
-            log_error.fadeIn(300).delay(600).fadeOut(300);
+            log_error.fadeIn(300).delay(850).fadeOut(300);
         } else {
             $.ajax({
                 type: "POST",
@@ -90,7 +96,7 @@ $(document).ready(function(){
                         window.location.href = "menu.php";
                     } else {
                         log_error.html('<strong>Error: </strong>Usuario no encontrado');
-                        log_error.fadeIn(300).delay(600).fadeOut(300);
+                        log_error.fadeIn(300).delay(850).fadeOut(300);
                     }
                 }
             });
@@ -104,44 +110,29 @@ $(document).ready(function(){
 
         if(usr == ""){
             log_error.html('<strong>Error: </strong>Ingrese nombre de usuario');
-            log_error.fadeIn(300).delay(600).fadeOut(300);
+            log_error.fadeIn(300).delay(850).fadeOut(300);
         } else if(pass == "") {
             log_error.html('<strong>Error: </strong>Ingrese contraseña');
-            log_error.fadeIn(300).delay(600).fadeOut(300);
-        } else if (id == -1){
-            log_error.html('<strong>Error: </strong>Escoja una categoría');
-            log_error.fadeIn(300).delay(600).fadeOut(300);
+            log_error.fadeIn(300).delay(850).fadeOut(300);
         } else {
-            switch (id) {
-                case 0:
-                    cat = "Free";
-                    break;
-                case 1:
-                    cat = "Regular";
-                    break;
-                case 2:
-                    cat = "Premium";
-                    break;
-            }
-
             $.ajax({
                 type: "POST",
                 url: "register.php",
                 data: {
                     username: usr,
                     password: pass,
-                    category: cat
+                    category: $("#cat_combo").find('option:selected').text()
                 },
                 success: function(html){
                     if(html == 1){
                         log_error.removeClass().addClass("alert alert-success");
                         log_error.html('<strong>Feed: </strong>Usuario creado con éxito');
-                        log_error.fadeIn(300).delay(600).fadeOut(300, function(){
+                        log_error.fadeIn(300).delay(850).fadeOut(300, function(){
                             log_error.removeClass().addClass("alert alert-danger");
                         });
                     } else {
                         log_error.html('<strong>Error: </strong>Usuario ya existente');
-                        log_error.fadeIn(300).delay(600).fadeOut(300);
+                        log_error.fadeIn(300).delay(850).fadeOut(300);
                     }
                 }
             });

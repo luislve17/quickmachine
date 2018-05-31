@@ -68,16 +68,12 @@
 
                             <button type="button" class="btn btn-secondary" id="cancelar">X</button>
                             <button type="button" class="btn btn-danger" id="deshechar"><i class="far fa-trash-alt"></i> Deshechar</button>
-                            <button type="button" class="btn btn-success" id="guardar"><i class="far fa-save"></i> Guardar</button>
+                            <button type="button" class="btn btn-info" id="guardar"><i class="far fa-save"></i> Guardar</button>
                         </div>
                     </div>
                 </div>
-
-                <div id="social">
-                    <i class="fab fa-facebook-square"></i> Síguenos
-                    <i class="fab fa-github"></i> <a target="_blank" href="https://github.com/luislve17/quickmachine">Source</a>
-                </div>
             </center>
+            <div class="alert alert-danger" id="notif"></div>
         </div>
     </body>
 </html>

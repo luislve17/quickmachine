@@ -32,7 +32,7 @@ body{
     left: 60%;
     top: 50px;
     width: 30%;
-    height: 450px;
+    height: 470px;
 }
 
 #login_title{
@@ -48,7 +48,6 @@ body{
 
 #error_notif{
     display: none;
-    margin: 20px;
     margin: 0;
 }
 
@@ -170,6 +169,11 @@ hr{
     cursor: pointer;
 }
 
+#cat_btn{
+    width: 100px;
+    display: block;
+}
+
 /* nuevo.php */
 #data_name{
     margin: 0;
@@ -188,11 +192,27 @@ hr{
     text-align: left;
 }
 
-#deshechar,#guardar,#edit_name{
+#deshechar,#guardar,#edit_name,#cancelar{
     border-radius: 2px;
 }
 
 #edit_name{
     padding: 4px;
     margin-left: 10px;
+}
+
+#notif{
+    display: none;
+    margin: 0;
+}
+
+/* Mostrar.php */
+#data_table{
+    width: 90%;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+#editar, #eliminar{
+    border-radius: 3px;
 }

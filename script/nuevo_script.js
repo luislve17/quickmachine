@@ -40,26 +40,56 @@ $('document').ready(function(){
     });
 
     $("#guardar").click(function(){
-        var nan_error = false;
+        var error = false;
         var lines = $('textarea').val().split('\n');
+        var n_col = 0;
         for (var i = 0; i < lines.length; i++){
-            lines[i] = lines[i].split(/\s+/);
+            lines[i] = lines[i].split(/\s+/); // TODO: CAMBIAR SEGUN OPCION
+            if (i == 0){
+                n_col = lines[i].length;
+            } else if (lines[i].length != n_col){
+                showErrorNotif(2, i+1);
+                error = true;
+                break;
+            }
             for (var j = 0; j < lines[i].length; j++){
                 lines[i][j] = parseFloat(lines[i][j]);
                 if(isNaN(lines[i][j])){
-                    alert("Error. Valor no numérico presente en data");
-                    nan_error = true;
+                    showErrorNotif(1, i+1);
+                    error = true;
                     break;
                 }
             }
-            if(nan_error) break;
+            if(error) break;
         }
-        var data = lines;
+        var data = lines; data.push(new Date().toLocaleString());
         var data_name = $("#current_name").text();
 
-        localStorage.setItem(data_name, JSON.stringify(data));
-        console.log(localStorage);
+        if(!error){
+            localStorage.setItem(data_name, JSON.stringify(data));
+            showSuccessNotif();
+        }
     });
+
+    function showSuccessNotif(){
+        var log_error = $("#notif");
+        log_error.removeClass().addClass("alert alert-success");
+        log_error.html('<strong>Feed: </strong>Data creada con éxito');
+        log_error.fadeIn(300).delay(2500).fadeOut(300);
+    };
+
+    function showErrorNotif(type, arg=0){
+        var log_error = $("#notif");
+        if (type == 1) {
+            log_error.removeClass().addClass("alert alert-danger");
+            log_error.html('<strong>Error-Fila:' + arg + ': </strong>Valor no numérico presente en dataset');
+            log_error.fadeIn(300).delay(2500).fadeOut(300);
+        } else if (type == 2){
+            log_error.removeClass().addClass("alert alert-danger");
+            log_error.html('<strong>Error-Fila:' + arg + ' </strong>Número de columnas no coincide con la primera');
+            log_error.fadeIn(300).delay(2500).fadeOut(300);
+        }
+    };
 
     var current_title = "sin titulo*";
     var edit_mode = false;

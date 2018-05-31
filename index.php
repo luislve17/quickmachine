@@ -13,6 +13,7 @@
         <script src="script/jquery-3.3.1.min.js"></script>
         <script src="script/index_script.js"></script>
         <script src="script/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
         <link rel="stylesheet" type"text/css" href="style/bootstrap.min.css"/>
         <link rel="stylesheet" type"text/css" href="style/style.css"/>
     </head>
@@ -35,15 +36,17 @@
             </div>
             <div class="card-body text-left">
                 <form id="login_form">
-                    <div class="input-group mb-3" style="margin:0; padding:0">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button" style="display:none" id="cat_btn">Categoría</button>
-                        </div>
-                        <input id="username_input" type="text" placeholder="Nombre de usuario" style="padding:10px" autofocus/>
-                    </div>
+                    <input id="username_input" type="text" placeholder="Nombre de usuario" style="padding:10px" autofocus/>
                     <input id="pass_input" type="password" placeholder="Contraseña"/>
-                    <br/>
-                    <button id="enter_button" type="button" class="btn btn-primary">ENTRAR</button>
+                    <div id="cat" style="padding:0; margin-up:10px; display:none">
+                        <label class="col-form-label" id="cat_label">Categoría <i class="fas fa-caret-right"></i></label>
+                        <select id="cat_combo" style="width:170px;height:45px">
+                            <option value="Premium">Premium</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Free">Free</option>
+                        </select>
+                    </div>
+                    <button id="enter_button" type="button" class="btn btn-primary" style="display:block">ENTRAR</button>
                     <div style="padding:0;margin:0;text-align:right;margin-top:10px">
                         <a href="#" style="font-size: 13px">¿Olvidaste tu contraseña?</a>
                         <br />

@@ -41,8 +41,28 @@
         </div>
 
         <div id="content">
-            <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Archivo &gt; <a href="#">Nuevo</a><hr /></div>
-            <h1 class="test">Hola?</h1>
+            <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Data &gt; <a href="#">Mostrar</a><hr /></div>
+
+            <table class="table" id="data_table">
+                <thead class="thead" style="background-color: #303030; color:white">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre de dataset</th>
+                        <th scope="col">Ultima modificación</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="data_logs">
+                    <!--
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
