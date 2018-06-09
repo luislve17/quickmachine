@@ -116,4 +116,11 @@ $('document').ready(function(){
             edit_mode = false;
         }
     });
+
+    $("#input_name").focusout(function(){
+        $("#current_name").text($("#input_name").val());
+        $("#current_name").css('display', 'inline');
+        $("#input_name").css('display', 'none');
+        edit_mode = false;
+    })
 });

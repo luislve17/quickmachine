@@ -79,8 +79,9 @@ $('document').ready(function(){
         if($(this).attr('id') == "submenu_4"){ // Archivo > Nuevo
             window.location.href = "nuevo.php";
         } else if ($(this).attr('id') == "submenu_9"){ // Data > Mostrar
-            console.log("?");
             window.location.href = "mostrar.php";
+        } else if ($(this).attr('id') == "submenu_5") {
+            window.location.href = "importar.php";
         }
     })
 

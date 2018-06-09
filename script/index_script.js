@@ -37,23 +37,6 @@ $(document).ready(function(){
     var cat_showing = "Categoría"
     var id = -1;
 
-
-
-
-    /*
-    $("#cat_label").click(function(){
-        if((id == 2)||(id == -1)){
-            $(this).text("Free");
-        } else if(id == 0) {
-            $(this).text("Regular");
-        } else if(id == 1) {
-            $(this).text("Premium");
-        }
-        id = (id + 1)%3;
-        console.log(id);
-    });
-    */
-
     $("#enter_button").click(function(){
         if(!inic_reg_flag){
             try_login();

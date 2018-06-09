@@ -43,26 +43,53 @@
         <div id="content">
             <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Data &gt; <a href="#">Mostrar</a><hr /></div>
 
-            <table class="table" id="data_table">
-                <thead class="thead" style="background-color: #303030; color:white">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre de dataset</th>
-                        <th scope="col">Ultima modificación</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="data_logs">
-                    <!--
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
+            <div style="overflow-y: scroll;max-height: calc(100% - 100px);">                
+                <table class="table" id="data_table">
+                    <thead class="thead" style="background-color: #303030; color:white">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre de dataset</th>
+                            <th scope="col">Ultima modificación</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data_logs">
+                        <!--
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        -->
+                    </tbody>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="my_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">Confirmar</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+      
+                            <div class="modal-body", id="modal_content">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="confirm">Confirmar</button>
+                                <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+                            </div>
+                            <div id="notif">
+                                
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </table>
+            </div>
         </div>
     </body>
 </html>
