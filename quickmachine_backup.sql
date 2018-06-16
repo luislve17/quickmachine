@@ -61,7 +61,7 @@ CREATE TABLE `menus` (
 
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-INSERT INTO `menus` VALUES (1,'Archivo',0,1),(2,'Data',0,1),(3,'Modulos',0,2),(4,'Nuevo',1,1),(5,'Importar',1,2),(6,'Exportar',1,3),(7,'Ajustar',3,2),(8,'Clasificar',3,2),(9,'Mostrar',2,1);
+INSERT INTO `menus` VALUES (1,'Archivo',0,1),(2,'Data',0,1),(3,'Modulos',0,2),(4,'Nuevo',1,1),(5,'Importar',1,2),(6,'Exportar',1,3),(7,'Ajuste Lineal',3,2),(8,'Clasificar',3,2),(9,'Mostrar',2,1),(10,'Historial',3,2);
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +78,7 @@ CREATE TABLE `users` (
   `password` varchar(64) NOT NULL,
   `category` varchar(16) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +87,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','21232f297a57a5a743894a0e4a801fc3','Premium'),(2,'regular','af37d08ae228a87dc6b265fd1019c97d','Regular'),(3,'free','aa2d6e4f578eb0cfaba23beef76c2194','Free'),(5,'test','098f6bcd4621d373cade4e832627b4f6','Regular'),(8,'prueba','c893bad68927b457dbed39460e6afd62','Regular');
+INSERT INTO `users` VALUES (1,'admin','21232f297a57a5a743894a0e4a801fc3','Premium'),(2,'regular','af37d08ae228a87dc6b265fd1019c97d','Regular'),(3,'free','aa2d6e4f578eb0cfaba23beef76c2194','Free'),(5,'test','098f6bcd4621d373cade4e832627b4f6','Regular'),(8,'prueba','c893bad68927b457dbed39460e6afd62','Regular'),(9,'User1','1a1dc91c907325c69271ddf0c944bc72','Premium'),(10,'jhon','e10adc3949ba59abbe56e057f20f883e','Free'),(11,'muca','3ca892ba2f1dc61a278fd6d897adc832','Premium'),(12,'luis','502ff82f7f1f8218dd41201fe4353687','Premium'),(13,'test1234','81dc9bdb52d04dc20036dbd8313ed055','Premium');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -100,4 +100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-30 22:00:56
+-- Dump completed on 2018-06-16 13:55:45

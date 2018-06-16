@@ -82,6 +82,8 @@ $('document').ready(function(){
             window.location.href = "mostrar.php";
         } else if ($(this).attr('id') == "submenu_5") {
             window.location.href = "importar.php";
+        } else if ($(this).attr('id') == "submenu_7") {
+            window.location.href = "ajustar.php";
         }
     })
 
