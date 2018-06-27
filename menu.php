@@ -45,15 +45,21 @@
             <center>
                 <div class="card" style="width: 90%">
                     <div class="card-header" style="background-color:#303030">
-                        <h3 class="card-title" style="color: white">Alpha 0.0.1 ya está aquí</h3>
+                        <h3 class="card-title" style="color: white">Alpha 0.0.7 está aquí</h3>
                     </div>
-                    <p class="card-text" style="margin: 20px; text-align:left">
-                        No es como que importe mucho, la verdad ni siquiera se va a ver
-                        esta version subida a un servidor, solo existen las definiciones
-                        de las categorías y se habilitó el linkeo a la base de datos.
-                        <br />
-                        Nada interesante.
-                    </p>
+                    <div class="card-text" style="margin: 20px; text-align:left">
+                        <h4>Novedades para usuarios Premium y Regular:</h4>
+						<ul>
+							<li>Herramienta de importación de datos</li>
+							<li>Herramienta de edición de datos</li>
+							<li>Módulo de ajuste lineal</li>
+							<li>Módulo de clusterización</li>
+							<li>Revisión de historial</li>
+							<li>Gráficas descriptivas</li>							
+						</ul>
+                        <h4>Novedades para usuarios Free:</h4>
+						Nada... Por pobres
+                    </div>
                 </div>
 
                 <div id="social">
