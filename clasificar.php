@@ -17,7 +17,7 @@
             var current_category = "<?php echo $_SESSION["logged_cat"]; ?>";
         </script>
         <script src="script/menu_script.js"></script>
-        <script src="script/ajustar_script.js"></script>
+        <script src="script/clasificar_script.js"></script>
         <script src="script/bootstrap.min.js"></script>
 		<script src="script/Chart.bundle.min.js"></script>
         <link rel="stylesheet" type"text/css" href="style/bootstrap.min.css"/>
@@ -42,7 +42,7 @@
         </div>
 
         <div id="content">
-            <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Modulos &gt; <a href="#">Ajuste Lineal</a><hr /></div>
+            <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Modulos &gt; <a href="#">Clasificar</a><hr /></div>
 
             <div id="table_body" style="overflow-y: scroll;max-height: calc(100% - 100px);">                
                 <table class="table" id="data_table">
@@ -75,12 +75,11 @@
 					<div class="card" id="reg_desc">
 						<div class="card-body">
 						<h5 class="card-title" id="data_title"></h5>
-						<h6 class="card-subtitle mb-2 text-muted">Regresión Lineal</h6>
+						<h6 class="card-subtitle mb-2 text-muted">Clusterización</h6>
 						<ul class="card-text" style="text-align:left">
-							<li>Ecuación: </li>
+							<li>Cant. de clústeres: </li>
+							<li>Cant. datos: </li>
 							<li>Cantidad de iteraciones: </li>
-							<li>Ratio de aprendizaje: </li>
-							<li>Epsilon de margen: </li>
 						</ul>
 						</div>
 					</div>

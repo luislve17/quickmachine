@@ -75,7 +75,7 @@ $('document').ready(function(){
         }
     })
 
-    $("#main_menu").on('click', '.sub_menu', function(){
+    $("#main_menu").on('click', '.sub_menu', function(){		
         if($(this).attr('id') == "submenu_4"){ // Archivo > Nuevo
             window.location.href = "nuevo.php";
         } else if ($(this).attr('id') == "submenu_9"){ // Data > Mostrar
@@ -84,7 +84,11 @@ $('document').ready(function(){
             window.location.href = "importar.php";
         } else if ($(this).attr('id') == "submenu_7") {
             window.location.href = "ajustar.php";
-        }
+        } else if ($(this).attr('id') == "submenu_8") {
+			window.location.href = "clasificar.php";
+		} else if ($(this).attr('id') == "submenu_10") {
+			window.location.href = "historial.php";
+		}
     })
 
     $(".logout_link").click(function(){

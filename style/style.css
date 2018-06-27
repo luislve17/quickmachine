@@ -257,3 +257,18 @@ hr{
 	top:280px;
 	right: 130px;
 }
+
+#adj_diff_notif{
+	display: none;
+    float: inherit;
+    top: 600px;
+    position: fixed;
+}
+
+/* historial_script */
+
+#data_logs>div{
+	background-color: red;
+	width: 100%;
+	height: 100px;
+}

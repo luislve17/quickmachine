@@ -40,6 +40,67 @@ INSERT INTO `categories` VALUES (1,'free'),(2,'regular'),(3,'premium');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `log_clustering`
+--
+
+DROP TABLE IF EXISTS `log_clustering`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `log_clustering` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `usr_name` varchar(64) DEFAULT NULL,
+  `data_name` varchar(128) DEFAULT NULL,
+  `cant_clusters` int(5) DEFAULT NULL,
+  `cant_data` int(8) DEFAULT NULL,
+  `num_iter` int(7) DEFAULT NULL,
+  `register_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `log_clustering`
+--
+
+LOCK TABLES `log_clustering` WRITE;
+/*!40000 ALTER TABLE `log_clustering` DISABLE KEYS */;
+INSERT INTO `log_clustering` VALUES (1,'admin','test2.txt',4,200,1163,'2018-06-27 08:48:00'),(2,'admin','test2.txt',4,200,1142,'2018-06-27 08:48:23'),(3,'admin','test.txt',4,100,1207,'2018-06-27 08:48:38'),(4,'regular','test2.txt',4,200,1223,'2018-06-27 08:49:05');
+/*!40000 ALTER TABLE `log_clustering` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `log_linreg`
+--
+
+DROP TABLE IF EXISTS `log_linreg`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `log_linreg` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `usr_name` varchar(64) DEFAULT NULL,
+  `data_name` varchar(128) DEFAULT NULL,
+  `theta_0` float(20,17) DEFAULT NULL,
+  `theta_1` float(20,17) DEFAULT NULL,
+  `delta_J` float(25,20) DEFAULT NULL,
+  `num_iter` int(7) DEFAULT NULL,
+  `learning_rate` float(15,15) DEFAULT NULL,
+  `epsilon` float(15,15) DEFAULT NULL,
+  `register_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `log_linreg`
+--
+
+LOCK TABLES `log_linreg` WRITE;
+/*!40000 ALTER TABLE `log_linreg` DISABLE KEYS */;
+INSERT INTO `log_linreg` VALUES (1,'admin','test.txt',14.52443027496337900,3.49759817123413100,0.00009997736924560740,17041,0.000500000023749,0.000099999997474,'2018-06-27 08:47:09'),(2,'admin','test.txt',14.52439785003662100,3.49759864807128900,0.00009998113091569394,17028,0.000500000023749,0.000099999997474,'2018-06-27 09:40:19'),(3,'admin','test.txt',14.52439785003662100,3.49759864807128900,0.00009998113091569394,17028,0.000500000023749,0.000099999997474,'2018-06-27 09:40:19'),(4,'admin','test.txt',14.52439785003662100,3.49759864807128900,0.00009998113091569394,17028,0.000500000023749,0.000099999997474,'2018-06-27 09:40:20'),(5,'admin','test.txt',14.52439785003662100,3.49759864807128900,0.00009998113091569394,17028,0.000500000023749,0.000099999997474,'2018-06-27 09:40:20');
+/*!40000 ALTER TABLE `log_linreg` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `menus`
 --
 
@@ -61,7 +122,7 @@ CREATE TABLE `menus` (
 
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-INSERT INTO `menus` VALUES (1,'Archivo',0,1),(2,'Data',0,1),(3,'Modulos',0,2),(4,'Nuevo',1,1),(5,'Importar',1,2),(6,'Exportar',1,3),(7,'Ajuste Lineal',3,2),(8,'Clasificar',3,2),(9,'Mostrar',2,1),(10,'Historial',3,2);
+INSERT INTO `menus` VALUES (1,'Archivo',0,1),(2,'Data',0,1),(3,'Modulos',0,2),(4,'Nuevo',1,1),(5,'Importar',1,2),(7,'Ajuste Lineal',3,2),(8,'Clasificar',3,2),(9,'Mostrar',2,1),(10,'Historial',3,2);
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-16 13:55:45
+-- Dump completed on 2018-06-27 12:16:06

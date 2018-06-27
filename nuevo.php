@@ -61,9 +61,6 @@
                                 <label style="padding-right:35px">Separación:</label>
                                 <input type="checkbox" class="form-check-input sep_check" id="space">
                                 <label class="form-check-label sep_option" for="space">Espacio/Tab</label>
-
-                                <input type="checkbox" class="form-check-input" id="comma">
-                                <label class="form-check-label sep_option" for="comma">Coma</label>
                             </div>
 
                             <button type="button" class="btn btn-secondary" id="cancelar">X</button>

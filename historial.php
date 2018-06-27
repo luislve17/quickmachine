@@ -17,9 +17,8 @@
             var current_category = "<?php echo $_SESSION["logged_cat"]; ?>";
         </script>
         <script src="script/menu_script.js"></script>
-        <script src="script/ajustar_script.js"></script>
+        <script src="script/historial_script.js"></script>
         <script src="script/bootstrap.min.js"></script>
-		<script src="script/Chart.bundle.min.js"></script>
         <link rel="stylesheet" type"text/css" href="style/bootstrap.min.css"/>
         <link rel="stylesheet" type"text/css" href="style/style.css"/>
     </head>
@@ -42,16 +41,17 @@
         </div>
 
         <div id="content">
-            <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Modulos &gt; <a href="#">Ajuste Lineal</a><hr /></div>
+            <div id="breadcrums"><i class="fas fa-map-marker-alt"></i><a href="menu.php"> Menu</a> &gt; Modulos &gt; <a href="#">Historial</a><hr /></div>
 
             <div id="table_body" style="overflow-y: scroll;max-height: calc(100% - 100px);">                
                 <table class="table" id="data_table">
                     <thead class="thead" style="background-color: #303030; color:white">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">id</th>
                             <th scope="col">Nombre de dataset</th>
-                            <th scope="col">Ultima modificación</th>
-                            <th scope="col">Acciones</th>
+                            <th scope="col">Proceso aplicado</th>
+                            <th scope="col">Fecha de registro</th>
+                            <th scope="col">Ver</th>
                         </tr>
                     </thead>
                     <tbody id="data_logs">
@@ -65,34 +65,29 @@
                         -->
                     </tbody>
                 </table>
-            </div>
-	
-			<div id="graph_body">
-				<div id="graph_portion">
-					<canvas id="myChart"></canvas>				
-				</div>
-				<div id="reg_desc">
-					<div class="card" id="reg_desc">
-						<div class="card-body">
-						<h5 class="card-title" id="data_title"></h5>
-						<h6 class="card-subtitle mb-2 text-muted">Regresión Lineal</h6>
-						<ul class="card-text" style="text-align:left">
-							<li>Ecuación: </li>
-							<li>Cantidad de iteraciones: </li>
-							<li>Ratio de aprendizaje: </li>
-							<li>Epsilon de margen: </li>
-						</ul>
+
+				<!-- Modal -->
+				<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="ModalTitle">Modal title</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body" id="modal_content">
+							...
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+							</div>
 						</div>
 					</div>
 				</div>
-
-				<div id="reg_options">
-					<button class="btn btn-warning" id="back">Volver</button>
-					<button class="btn btn-success" id="register">Registrar</button>
-				</div>
-			</div>
-
-	        <div class="alert alert-danger" id="adj_diff_notif"></div>
+            </div>
+	
+	        <div class="alert alert-danger" id="diff_notif"></div>
         </div>
     </body>
 </html>

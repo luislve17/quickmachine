@@ -34,10 +34,14 @@ $(document).ready(function(){
         return {values: data_values, date: data_date};
 	}
 
+	var g_regression_result;
+	var g_dn; 
+
 	$("#data_logs").on('click', '.adj', function(){		
 		var data_index = parseFloat($(this).attr('id').split('_')[1]) - 1;
 		var data_name = localStorage.key(data_index);
-		
+		g_dn = data_name;
+
 		var numeric_data = [];		
 		var data = JSON.parse(localStorage.getItem(data_name));
 		for(var i = 0; i < data.length - 1; i++){
@@ -54,6 +58,7 @@ $(document).ready(function(){
 			var l_rate = 0.0005
 			var eps = 0.0001
 			var regression_result = linear_regression(numeric_data, l_rate, eps, 100000);
+			g_regression_result = regression_result;
 			// Mostrando grafica
 			showGraph(numeric_data, regression_result['reg']);
 
@@ -137,12 +142,14 @@ $(document).ready(function(){
 			'DJ': Math.abs(J-J_old),
 			'iter': cont,
 			'theta': [theta_0, theta_1],
-			'reg': [limits[0], theta_0 + theta_1*limits[0], limits[1], theta_0 + theta_1*limits[1]]
+			'reg': [limits[0], theta_0 + theta_1*limits[0], limits[1], theta_0 + theta_1*limits[1]],
+			'learning_rate': learning_rate,
+			'eps': eps
 		};
 	};
 
     function showErrorNotif(){
-        var log_error = $("#diff_notif");
+        var log_error = $("#adj_diff_notif");
 		log_error.removeClass().addClass("alert alert-danger");
 		log_error.html('<strong>Error: </strong>Dataset presenta número de columnas diferente a 2');
 		log_error.fadeIn(300).delay(2500).fadeOut(300);
@@ -184,4 +191,47 @@ $(document).ready(function(){
 		$("#graph_body").fadeToggle(200).delay(100);
 		$("#table_body").fadeToggle(200);
 	});
+
+
+	$("#register").click(function(){
+		t0 = g_regression_result['theta'][0];
+		t1 = g_regression_result['theta'][1];
+		dJ = g_regression_result['DJ'];
+		n_iter = g_regression_result['iter'];
+		l_rate = g_regression_result['learning_rate'];
+		eps = g_regression_result['eps'];
+		
+		console.log(current_username, g_dn, t0, t1, dJ, n_iter, l_rate, eps);
+		
+		registrar_ajuste(current_username, g_dn, t0, t1, dJ, n_iter, l_rate, eps);
+	});
+
+	function registrar_ajuste(usr_name, d_name, t0, t1, dJ, n_iter, l_rate, eps){
+		$.ajax({
+			type: "POST",
+			url: "registrar_adj.php",
+			data: {
+				user_name: usr_name,
+				data_name: d_name,
+				theta_0: t0,
+				theta_1: t1,
+				delta_J: dJ,
+				num_iter: n_iter,
+				learning_rate: l_rate,
+				epsilon: eps
+			},
+			success: function(result){
+				if (result == 1){
+					showSuccessNotif();
+				}
+			}
+		});
+	}
+
+	function showSuccessNotif() {
+		var log_error = $("#adj_diff_notif");
+		log_error.removeClass().addClass("alert alert-success");
+		log_error.html('<strong>Feedback: </strong>Data de ajuste registrada exitosamente');
+		log_error.fadeIn(300).delay(2500).fadeOut(300);
+	}
 });
